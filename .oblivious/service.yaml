@@ -1,0 +1,25 @@
+auth:
+- auth_name: default
+  auth_type: signed_headers
+base_image: ubuntu_18_04_proxy
+build_args:
+- name: example
+  required_arg: false
+  type: integer
+meta:
+  author: Bob Smith
+  author_email: bobsmithobl@gmail.com
+  git: git@github.com:BobSmithObl/Team-A.git
+  version: 0.0.1
+paths:
+- access: user
+  path: /test
+  short_description: a test path
+roles:
+- role_auth: default
+  role_cardinality: 1
+  role_description: test
+  role_name: user
+traffic:
+- name: inbound
+  port: 1234
